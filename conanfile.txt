@@ -1,0 +1,19 @@
+[requires]
+opencv/4.1.1@conan/stable
+libusb/1.0.23@bincrafters/stable
+
+[generators]
+cmake
+ 
+[options]
+opencv:shared=True
+opencv:ffmpeg=False
+opencv:tiff=False
+opencv:protobuf=False # disables dnn
+
+
+[imports]
+#., license* -> ./licenses @ folder=True, ignore_case=True ## FixMe adding OpenCV gives permission error on license copy 
+lib, *.lib -> ./lib
+bin, *.dll, *.so -> ./bin
+
