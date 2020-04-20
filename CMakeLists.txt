@@ -38,7 +38,6 @@ if(GENERATOR_IS_MULTI_CONFIG)
                     BUILD missing)
 else()
     conan_cmake_run(CONANFILE conanfile.txt
-                    CMAKE_TARGETS
                     BUILD missing)
 endif()
 
@@ -48,7 +47,7 @@ else()
   include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 endif()
 
-conan_basic_setup()
+include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
 
 add_OpenCV()
 find_package(OpenCV REQUIRED)
