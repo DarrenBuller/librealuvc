@@ -4,6 +4,7 @@ libusb/1.0.23@bincrafters/stable
 
 [generators]
 cmake
+cmake_find_package
  
 [options]
 opencv:shared=True
