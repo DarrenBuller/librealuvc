@@ -30,26 +30,7 @@ if(BUILD_STATIC_LIBS)
   add_library(${LRS_TARGET}_static STATIC "")
 endif()
 
-include(conan.cmake)
-
-if(GENERATOR_IS_MULTI_CONFIG)
-    conan_cmake_run(CONANFILE conanfile.txt
-                    CONFIGURATION_TYPES "Release;Debug;RelWithDebInfo"
-                    BUILD missing)
-else()
-    conan_cmake_run(CONANFILE conanfile.txt
-                    BUILD missing)
-endif()
-
-if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo_multi.cmake)
-  include(${CMAKE_BINARY_DIR}/conanbuildinfo_multi.cmake)
-else()
-  include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-endif()
-
-include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
-
-add_OpenCV()
+#add_OpenCV()
 find_package(OpenCV REQUIRED)
 set(DEPENDENCIES librealuvc ${OpenCV_LIBS})
 include_directories(${OpenCV_INCLUDE_DIRS})
