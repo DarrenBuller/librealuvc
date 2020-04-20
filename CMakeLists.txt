@@ -50,7 +50,7 @@ endif()
 
 conan_basic_setup()
 
-# add_OpenCV()
+add_OpenCV()
 find_package(OpenCV REQUIRED)
 set(DEPENDENCIES librealuvc ${OpenCV_LIBS})
 include_directories(${OpenCV_INCLUDE_DIRS})
