@@ -50,11 +50,11 @@ include(src/CMakeLists.txt)
 include(third-party/CMakeLists.txt)
 
 # set library version
-set_target_properties(${LRS_TARGET} PROPERTIES
-  WINDOWS_EXPORT_ALL_SYMBOLS ON
-  VERSION ${REALUVC_VERSION_STRING}
-  SOVERSION ${REALUVC_VERSION_MAJOR}
-)
+#set_target_properties(${LRS_TARGET} PROPERTIES
+#  WINDOWS_EXPORT_ALL_SYMBOLS ON
+#  VERSION ${REALUVC_VERSION_STRING}
+#  SOVERSION ${REALUVC_VERSION_MAJOR}
+#)
 
 add_subdirectory(wrappers)
 
