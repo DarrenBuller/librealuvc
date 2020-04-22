@@ -22,11 +22,11 @@ os_set_flags()
 global_set_flags()
 
 if(BUILD_SHARED_LIBS)
-  message(STATUS "add_library(${LRS_TARGET} SHARED)")
+  message(STATUS "*******add_library(${LRS_TARGET} SHARED)")
   add_library(${LRS_TARGET} SHARED "")
 endif()
 if(BUILD_STATIC_LIBS)
-  message(STATUS "add_library(${LRS_TARGET}_static STATIC)")
+  message(STATUS "*******add_library(${LRS_TARGET}_static STATIC)")
   add_library(${LRS_TARGET}_static STATIC "")
 endif()
 
