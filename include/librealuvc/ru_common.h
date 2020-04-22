@@ -18,8 +18,10 @@
 
 #if defined(_MSC_VER) 
   #ifdef LIBREALUVC_EXPORTS
+    #pragma message( "LIBREALUVC_EXPORT __declspec(dllexport)" ) 
     #define LIBREALUVC_EXPORT __declspec(dllexport)
   #else
+    #pragma message( "LIBREALUVC_EXPORT __declspec(dllimport)" ) 
     #define LIBREALUVC_EXPORT __declspec(dllimport)
   #endif
 #else
