@@ -17,7 +17,7 @@
 //        behind wrapper classes declared with __declspec(dll_export)
 
 #if defined(_MSC_VER) 
-  #ifdef LIBREALUVC_EXPORTS
+  #if defined(LIBREALUVC_EXPORTS) || defined(librealuvc_EXPORTS)
     #pragma message( "LIBREALUVC_EXPORT __declspec(dllexport)" ) 
     #define LIBREALUVC_EXPORT __declspec(dllexport)
   #else
