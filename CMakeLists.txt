@@ -22,6 +22,8 @@ os_set_flags()
 global_set_flags()
 
 set(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "ON" FORCE)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE BOOL "ON" FORCE)
+add_compile_options(-verbosity:detailed)
 
 if(BUILD_SHARED_LIBS)
   message(STATUS "*******add_library(${LRS_TARGET} SHARED)")
