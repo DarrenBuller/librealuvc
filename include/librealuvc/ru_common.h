@@ -16,7 +16,7 @@
 //        as a Windows DLL, we would need to hide the STL classes
 //        behind wrapper classes declared with __declspec(dll_export)
 
-#if defined(_MSC_VER) && 0
+#if defined(_MSC_VER) 
   #ifdef LIBREALUVC_EXPORTS
     #define LIBREALUVC_EXPORT __declspec(dllexport)
   #else
