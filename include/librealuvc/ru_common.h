@@ -26,8 +26,6 @@
   #define LIBREALUVC_EXPORT
 #endif
 
-#pragma message("*****  define LIBREALUVC_EXPORT " LIBREALUVC_EXPORT)
-
 namespace librealuvc {
 
 using std::shared_ptr;
