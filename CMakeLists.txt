@@ -21,14 +21,13 @@ os_set_flags()
 # macro definition located at "CMake/global_config.cmake"
 global_set_flags()
 
-set(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "ON" FORCE)
+#set(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "ON" FORCE)
 #set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE BOOL "ON" FORCE)
 
+message(STATUS "*******CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS VALUE [${CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS}]")
 if(BUILD_SHARED_LIBS)
   message(STATUS "*******add_library(${LRS_TARGET} SHARED)")
   add_library(${LRS_TARGET} SHARED "")
-  message(STATUS "*******CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS YES CACHE BOOL \"Export all symbols\"")
-  set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS YES CACHE BOOL "Export all symbols")
 endif()
 if(BUILD_STATIC_LIBS)
   message(STATUS "*******add_library(${LRS_TARGET}_static STATIC)")
