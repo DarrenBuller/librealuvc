@@ -12,7 +12,6 @@ if(BUILD_FOR_OTHER_WIN)
 endif()
 
 if(BUILD_SHARED_LIBS)
-    message("******************************* add_compile_options(\"-DLIBREALUVC_BUILD_SHARED=1 -DLIBREALUVC_EXPORTS=1\")")
     add_compile_options("-DLIBREALUVC_BUILD_SHARED=1 -DLIBREALUVC_EXPORTS=1")
 endif()
 

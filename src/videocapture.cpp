@@ -119,7 +119,7 @@ PropertyDriverTable driver_table;
 
 } // end anon
 
-void register_property_driver(uint16_t vid, uint16_t pid, PropertyDriverMaker maker) {
+LIBREALUVC_EXPORT void register_property_driver(uint16_t vid, uint16_t pid, PropertyDriverMaker maker) {
   auto& table = driver_table;
   std::unique_lock<std::mutex> lock(table.mutex_);
   table.map_[table.pack_id(vid, pid)] = maker;
