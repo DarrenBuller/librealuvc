@@ -38,7 +38,6 @@ macro(os_set_flags)
         add_definitions(-DNOMINMAX)
     endif()
 
-    include(CMake/external_libusb.cmake)
 endmacro()
 
 macro(os_target_config)

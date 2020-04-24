@@ -30,7 +30,6 @@ if(BUILD_STATIC_LIBS)
   add_library(${LRS_TARGET}_static STATIC "")
 endif()
 
-add_OpenCV()
 find_package(OpenCV REQUIRED)
 set(DEPENDENCIES librealuvc ${OpenCV_LIBS})
 include_directories(${OpenCV_INCLUDE_DIRS})
