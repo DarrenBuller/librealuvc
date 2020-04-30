@@ -22,6 +22,7 @@ os_set_flags()
 global_set_flags()
 
 set(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "ON" FORCE)
+add_link_options(/VERBOSE)
 
 if(BUILD_SHARED_LIBS)
   message(STATUS "************************")
