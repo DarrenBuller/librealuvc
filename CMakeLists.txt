@@ -36,7 +36,7 @@ if(BUILD_STATIC_LIBS)
   add_library(${LRS_TARGET}_static STATIC "")
 endif()
 
-add_OpenCV()
+#add_OpenCV()
 find_package(OpenCV REQUIRED)
 set(DEPENDENCIES librealuvc ${OpenCV_LIBS})
 include_directories(${OpenCV_INCLUDE_DIRS})
@@ -56,11 +56,11 @@ include(src/CMakeLists.txt)
 include(third-party/CMakeLists.txt)
 
 # set library version
-#set_target_properties(${LRS_TARGET} PROPERTIES
-#  WINDOWS_EXPORT_ALL_SYMBOLS ON
-#  VERSION ${REALUVC_VERSION_STRING}
-#  SOVERSION ${REALUVC_VERSION_MAJOR}
-#)
+set_target_properties(${LRS_TARGET} PROPERTIES
+  WINDOWS_EXPORT_ALL_SYMBOLS ON
+  VERSION ${REALUVC_VERSION_STRING}
+  SOVERSION ${REALUVC_VERSION_MAJOR}
+)
 
 add_subdirectory(wrappers)
 
