@@ -1,5 +1,5 @@
 #  minimum required cmake version: 3.1.0
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 3.14)
 project(librealuvc LANGUAGES CXX C)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMake" CACHE PATH "cmake modules" FORCE)
@@ -21,8 +21,8 @@ os_set_flags()
 # macro definition located at "CMake/global_config.cmake"
 global_set_flags()
 
-set(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "ON" FORCE)
-add_link_options(/VERBOSE)
+#set(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "ON" FORCE)
+#add_link_options(/VERBOSE)
 
 if(BUILD_SHARED_LIBS)
   message(STATUS "************************")
