@@ -34,6 +34,7 @@ if(BUILD_WITH_CONAN)
   # Don't call find_package but use CONAN_PKG
   message(STATUS "Using Conan package for OpenCV")
   set(OpenCV_LIBS ${CONAN_LIBS_OPENCV})
+  message(STATUS "include_directories(${OpenCV_INCLUDE_DIRS}")
   include_directories(${CONAN_INCLUDE_DIRS_OPENCV})
 else()
   # add_OpenCV()
