@@ -33,7 +33,7 @@ endif()
 if(BUILD_WITH_CONAN)
   # Don't call find_package but use CONAN_PKG
   message(STATUS "Using Conan package for OpenCV")
-  target_link_libraries(libreauvc ${CONAN_LIBS})
+  target_link_libraries(librealuvc ${CONAN_LIBS})
 else()
   # add_OpenCV()
   find_package(OpenCV REQUIRED)
