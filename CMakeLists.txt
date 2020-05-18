@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.1.0)
 project(librealuvc LANGUAGES CXX C)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMake")
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMake" CACHE PATH "cmake modules" FORCE)
 
 # include librealsense general configuration
 include(CMake/global_config.cmake)
@@ -30,17 +30,12 @@ if(BUILD_STATIC_LIBS)
   add_library(${LRS_TARGET}_static STATIC "")
 endif()
 
-if(BUILD_WITH_CONAN)
-  # Don't call find_package but use CONAN_PKG
-  message(STATUS "Using Conan package for OpenCV")
-  target_link_libraries(librealuvc ${CONAN_LIBS})
-else()
-  # add_OpenCV()
-  find_package(OpenCV REQUIRED)
-  set(DEPENDENCIES librealuvc ${OpenCV_LIBS})
-  include_directories(${OpenCV_INCLUDE_DIRS})
-  add_library(OpenCV SHARED IMPORTED)
-endif()
+# add_OpenCV()
+find_package(OpenCV REQUIRED)
+set(DEPENDENCIES librealuvc ${OpenCV_LIBS})
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+add_library(OpenCV SHARED IMPORTED)
 
 # global project configuration
 # macro definition located at "CMake/global_config.cmake"
