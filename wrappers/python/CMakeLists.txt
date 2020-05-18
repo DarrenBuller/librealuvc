@@ -16,8 +16,12 @@ if(COMPILER_SUPPORTS_CXX11)
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 elseif(COMPILER_SUPPORTS_CXX0X)
+  message(WARN "COMPILER_SUPPORTS_CXX0X ****************************** ${CMAKE_CXX_FLAGS} -std=c++0x")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 endif()
+
+message(WARN "CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+
 
 set(DEPENDENCIES librealuvc ${OpenCV_LIBS})
 
