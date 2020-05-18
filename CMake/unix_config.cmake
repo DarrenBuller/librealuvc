@@ -22,6 +22,7 @@ macro(os_set_flags)
     endif(${MACHINE} MATCHES "arm-linux-gnueabihf")
 
     if(NOT BUILD_WITH_OPENMP)
+        message(WARN "BUILD_WITH_OPENMP ****************************** ${CMAKE_C_FLAGS} -pthread")
         set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
     endif()
